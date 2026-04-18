@@ -1,4 +1,4 @@
-package com.miguelbf.exchange_rate_api;
+package com.miguelbf.exchangerateapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

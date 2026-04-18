@@ -1,4 +1,4 @@
-package com.miguelbf.exchange_rate_api;
+package com.miguelbf.exchangerateapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
