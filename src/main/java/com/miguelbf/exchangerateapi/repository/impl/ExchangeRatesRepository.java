@@ -3,7 +3,7 @@ package com.miguelbf.exchangerateapi.repository.impl;
 import com.miguelbf.exchangerateapi.domain.clients.exchangerates.ErrorResponse;
 import com.miguelbf.exchangerateapi.domain.clients.exchangerates.LiveRatesResponse;
 import com.miguelbf.exchangerateapi.domain.enums.Currency;
-import com.miguelbf.exchangerateapi.exception.ExchangeRatesApiException;
+import com.miguelbf.exchangerateapi.exception.RatesUpstreamAPIException;
 import com.miguelbf.exchangerateapi.repository.IExchangeRatesRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatusCode;
@@ -30,9 +30,9 @@ public class ExchangeRatesRepository implements IExchangeRatesRepository {
 
     @Override
     public LiveRatesResponse getLiveRates(Currency from, Currency to) {
-        // API docs are incorrect and API returns 200 even when there is an error (e.g. invalid/missing access key)
-        // Raise ExchangeRatesAPIException when status code is error (API docs respected), or
-        // if the API docs are not respected, use the success parameter from response body to determine not successful response
+        // API docs are incorrect and API returns 200 even when there is an error (e.g. missing access key)
+        // Throw HttpErrorException (from RatesUpstreamAPIException) when status code is error (API docs respected), or
+        // if the API docs are not respected, use the success parameter from response body and throw BadGatewayException
         return restClient
             .get()
             .uri(uriBuilder -> uriBuilder
@@ -45,9 +45,14 @@ public class ExchangeRatesRepository implements IExchangeRatesRepository {
                 HttpStatusCode statusCode = response.getStatusCode();
                 JsonNode root = objectMapper.readTree(response.getBody());
 
-                if (statusCode.isError() || (root.has("success") && !root.get("success").asBoolean())) {
+                if (statusCode.isError()) {
                     ErrorResponse errorResponse = objectMapper.treeToValue(root, ErrorResponse.class);
-                    throw new ExchangeRatesApiException(statusCode, errorResponse);
+                    throw new RatesUpstreamAPIException.HttpError(statusCode, errorResponse);
+                }
+
+                if (root.has("success") && !root.get("success").asBoolean()){
+                    ErrorResponse errorResponse = objectMapper.treeToValue(root, ErrorResponse.class);
+                    throw new RatesUpstreamAPIException.BadGateway(statusCode, errorResponse);
                 }
 
                 return objectMapper.treeToValue(root, LiveRatesResponse.class);
