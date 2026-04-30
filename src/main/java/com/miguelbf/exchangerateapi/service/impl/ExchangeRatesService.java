@@ -6,10 +6,8 @@ import com.miguelbf.exchangerateapi.domain.record.RatesResponse;
 import com.miguelbf.exchangerateapi.repository.IExchangeRatesRepository;
 import com.miguelbf.exchangerateapi.service.IExchangeRatesService;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 
-@Validated
 @Service
 public class ExchangeRatesService implements IExchangeRatesService {
 
