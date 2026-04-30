@@ -2,6 +2,7 @@ package com.miguelbf.exchangerateapi.controller;
 
 import com.miguelbf.exchangerateapi.domain.enums.Currency;
 import com.miguelbf.exchangerateapi.domain.record.RatesResponse;
+import com.miguelbf.exchangerateapi.exception.GlobalExceptionHandler;
 import com.miguelbf.exchangerateapi.service.IExchangeRatesService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,6 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
@@ -22,6 +24,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.aMapWithSize;
 import static org.hamcrest.Matchers.emptyOrNullString;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -30,6 +33,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(ExchangeRatesController.class)
 public class ExchangeRatesControllerMockServiceTest {
+
+    @Autowired
+    private ApplicationContext context;
 
     @Autowired
     private MockMvc mockMvc;
@@ -101,6 +107,12 @@ public class ExchangeRatesControllerMockServiceTest {
             .andExpect(jsonPath("$.detail", not(emptyOrNullString())));
 
         verify(exchangeRatesService, never()).getRates(any(),any());
+    }
+
+    @Test
+    void whenExchangeRatesControllerLoaded_thenGlobalExceptionHandlerIsPresent() {
+        // Throws NoSuchBeanDefinitionException if GlobalExceptionHandler not configured
+        assertDoesNotThrow(() -> context.getBean(GlobalExceptionHandler.class));
     }
 
     @Test
