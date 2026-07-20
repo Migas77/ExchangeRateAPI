@@ -1,2 +1,2 @@
 trigger workflow
-BREAKING
+BREAKING CHANGE angular syntax
