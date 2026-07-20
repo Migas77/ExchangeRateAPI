@@ -25,6 +25,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "oracle"
+          java-version: "21"
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
