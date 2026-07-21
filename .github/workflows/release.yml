@@ -1,8 +1,10 @@
 name: Release
+
 on:
+  workflow_dispatch:
   push:
     branches:
-      - main                                        # or master
+      - 'main'
 
 permissions:
   contents: read                                    # for checkout
