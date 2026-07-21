@@ -17,7 +17,7 @@ plugins:
   - - "@semantic-release/exec"
     - verifyConditionsCmd: "mvn -B validate"
       prepareCmd: "mvn -B versions:set -DnewVersion=${nextRelease.version} -DgenerateBackupPoms=false && mvn -B clean package -DskipTests"
-      successCmd: "echo 'new_release_published=true' >> $GITHUB_OUTPUT && echo 'new_release_version=${nextRelease.version}' >> $GITHUB_OUTPUT"
+      successCmd: "echo 'new_release_published=true' >> $GITHUB_OUTPUT"
   - - "@semantic-release/git"
     - assets:
         - "pom.xml"
