@@ -35,6 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx --package semantic-release@25.0.8 \
+            --package conventional-changelog-conventionalcommits@8.1.0 \
             --package @semantic-release/exec@7.1.0 \
             --package @semantic-release/git@10.0.1 \
             semantic-release
