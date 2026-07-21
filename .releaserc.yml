@@ -10,6 +10,7 @@ plugins:
         - type: revert
           release: patch
         - type: build
+          scope: "{mvn,docker,helm}"
           release: patch
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
