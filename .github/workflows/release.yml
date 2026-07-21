@@ -7,7 +7,6 @@ on:
 jobs:
 
   release:
-    name: Release
     runs-on: ubuntu-latest
     permissions:
       contents: write                               # to be able to publish a GitHub release
@@ -33,7 +32,7 @@ jobs:
       
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx --package semantic-release@25.0.8 \
             --package conventional-changelog-conventionalcommits@8.0.0 \
