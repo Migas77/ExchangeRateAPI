@@ -19,7 +19,3 @@ jobs:
     # needs: test
     uses: ./.github/workflows/release.yml
 
-  image-build-and-push:
-    needs: release
-    uses: ./.github/workflows/image-build-and-push.yml
-    secrets: inherit
