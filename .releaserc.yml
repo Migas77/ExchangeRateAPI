@@ -17,10 +17,10 @@ plugins:
   - - "@semantic-release/exec"
     - verifyConditionsCmd: "mvn -B validate"
       prepareCmd: "mvn -B versions:set -DnewVersion=${nextRelease.version} -DgenerateBackupPoms=false && mvn -B clean package -DskipTests"
-  # - - "@semantic-release/git"
-  #   - assets:
-  #       - "pom.xml"
-  #     message: "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+  - - "@semantic-release/git"
+    - assets:
+        - "pom.xml"
+      message: "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
   - - "@semantic-release/github"
     - assets:
       - path: "target/*.jar"
