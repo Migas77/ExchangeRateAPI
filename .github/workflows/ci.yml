@@ -11,7 +11,7 @@ jobs:
   #   uses: ./.github/workflows/test.yml
 
   release:
-    needs: test
+    # needs: test
     uses: ./.github/workflows/release.yml
 
   docker:
