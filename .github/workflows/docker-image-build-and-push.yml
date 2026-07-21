@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Log git tags
-        run: git --no-pager tag
-
       - name: Checkout
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
+
+      - name: Log git tags
+        run: git --no-pager tag
 
       - name: Docker meta
         id: meta
