@@ -2,11 +2,10 @@ name: Docker Image Build and Push
 
 on:
   workflow_dispatch:
+  workflow_call:
   pull_request:
     branches:
-      - 'main'
-  release:
-    types: [published]
+      - main
 
 jobs:
   login:
