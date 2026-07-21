@@ -14,9 +14,7 @@ jobs:
     # needs: test
     uses: ./.github/workflows/release.yml
 
-  docker:
+  image-build-and-push:
     needs: release
-    uses: ./.github/workflows/docker.yml
-    with:
-      version: ${{ needs.release.outputs.version }}
+    uses: ./.github/workflows/image-build-and-push.yml
     secrets: inherit
