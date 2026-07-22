@@ -1,3 +1,9 @@
+## [6.4.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.3.0...v6.4.0) (2026-07-22)
+
+### Features
+
+* check new shas ([79de946](https://github.com/Migas77/ExchangeRateAPI/commit/79de9465e61cf752b067527901873b173326d753))
+
 ## [6.3.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.2.0...v6.3.0) (2026-07-22)
 
 ### Features
