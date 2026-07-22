@@ -66,6 +66,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEAD_REF: ${{ github.head_ref }}
+          GITHUB_REF: refs/heads/${{ github.head_ref }}
+          GITHUB_EVENT_NAME: push
         run: |
           npm exec --ignore-scripts -- semantic-release --dry-run --no-ci --branches "$HEAD_REF" \
             --plugins @semantic-release/commit-analyzer | tee release.log
