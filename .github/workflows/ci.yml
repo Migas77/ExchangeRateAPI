@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  tests-and-sonar:
+    uses: ./.github/workflows/tests-and-sonar.yml
+    secrets: inherit
+  release:
+    needs: tests-and-sonar
+    uses: ./.github/workflows/release.yml
+    secrets: inherit

@@ -1,10 +1,10 @@
 name: SonarQube
+
 on:
-  push:
-    tags:
-      - '*'
+  workflow_call:
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   build:
     name: Build and analyze
