@@ -61,6 +61,7 @@ jobs:
       - name: Replace branch name in branches array
         run: |
           sed -i 's/^\( *- \)main$/\1'"${HEAD_REF}"'/' .releaserc.yml
+          cat .releaserc.yml
       - name: Check next Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
