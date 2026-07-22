@@ -64,4 +64,4 @@ jobs:
           HEAD_REF: ${{ github.head_ref }}
         run: |
           npm exec --ignore-scripts -- semantic-release --dry-run --no-ci --branches "$HEAD_REF"
-          echo $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
