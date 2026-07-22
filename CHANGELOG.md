@@ -1,3 +1,10 @@
+## [5.20.1](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.0...v5.20.1) (2026-07-22)
+
+### Bug Fixes
+
+* again ([7b8e631](https://github.com/Migas77/ExchangeRateAPI/commit/7b8e63180db030753213008ea6e201cd029d5bab))
+* hopefully ([9e0a67a](https://github.com/Migas77/ExchangeRateAPI/commit/9e0a67a0c3ae72af570ff15eecd600660b740104))
+
 ## [5.20.0](https://github.com/Migas77/ExchangeRateAPI/compare/v5.19.0...v5.20.0) (2026-07-22)
 
 ### Features
