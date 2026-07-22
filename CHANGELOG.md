@@ -1,3 +1,10 @@
+## [5.21.0](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.2...v5.21.0) (2026-07-22)
+
+### Features
+
+* updated java distribution ([d22498e](https://github.com/Migas77/ExchangeRateAPI/commit/d22498e36844945c0fe5cf110f4144ee47cb209b))
+* updated java distribution ([9687559](https://github.com/Migas77/ExchangeRateAPI/commit/9687559e7104415f9d05f4d454cd987b8a259387))
+
 ## [5.20.2](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.1...v5.20.2) (2026-07-22)
 
 ### Bug Fixes
