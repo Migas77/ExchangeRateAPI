@@ -1,3 +1,9 @@
+## [6.5.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.4.0...v6.5.0) (2026-07-22)
+
+### Features
+
+* trigger code change ([3c77c0a](https://github.com/Migas77/ExchangeRateAPI/commit/3c77c0a7c6e94b33239d10adddf519d9d54861ec))
+
 ## [6.4.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.3.0...v6.4.0) (2026-07-22)
 
 ### Features
