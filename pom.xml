@@ -61,6 +61,12 @@
 			<artifactId>lombok</artifactId>
 			<scope>annotationProcessor</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.15</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -70,6 +76,31 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<!-- Jacoco plugin (test coverage) -->
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.7</version>
+			<executions>
+				<execution>
+				<id>prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+				</execution>
+				<execution>
+				<id>report</id>
+				<goals>
+					<goal>report</goal>
+				</goals>
+				<configuration>
+					<formats>
+					<format>XML</format>
+					</formats>
+				</configuration>
+				</execution>
+			</executions>
+		</plugin>
 	</build>
 
 </project>
