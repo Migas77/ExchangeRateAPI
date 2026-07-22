@@ -61,7 +61,7 @@ jobs:
       - name: Create local branch from detached HEAD
         env:
           HEAD_REF: ${{ github.head_ref }}
-        run: git checkout -b "$HEAD_REF"
+        run: git checkout "$HEAD_REF"
       - name: Check next Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
