@@ -62,4 +62,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HEAD_REF: ${{ github.head_ref }}
         run: |
-          npx semantic-release --dry-run --no-ci --branches "$HEAD_REF"
+          npm exec --ignore-scripts -- semantic-release --dry-run --no-ci --branches "$HEAD_REF"

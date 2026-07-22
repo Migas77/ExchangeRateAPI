@@ -41,7 +41,7 @@ jobs:
           node-version: "lts/*"
 
       - name: Install dependencies
-        run: npm clean-install
+        run: npm ci --ignore-scripts
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       
@@ -50,7 +50,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PAT }}
         run: |
-          npx --package semantic-release@25.0.8 \
+          npm exec --ignore-scripts -- semantic-release
             --package conventional-changelog-conventionalcommits@8.0.0 \
             --package @semantic-release/exec@7.1.0 \
             --package @semantic-release/git@10.0.1 \
