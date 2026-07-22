@@ -1,3 +1,9 @@
+## [5.20.2](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.1...v5.20.2) (2026-07-22)
+
+### Bug Fixes
+
+* trigger ([3b2a8bd](https://github.com/Migas77/ExchangeRateAPI/commit/3b2a8bd016357c1c9e0c60e07a2f3215c279fba7))
+
 ## [5.20.1](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.0...v5.20.1) (2026-07-22)
 
 ### Bug Fixes
