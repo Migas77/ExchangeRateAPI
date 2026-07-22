@@ -59,6 +59,8 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Replace branch name in branches array
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.sha }}
         run: |
           sed -i 's/^\( *- \)main$/\1'"${HEAD_REF}"'/' .releaserc.yml
           cat .releaserc.yml
