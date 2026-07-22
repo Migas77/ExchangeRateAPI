@@ -44,6 +44,11 @@ public class ExchangeRatesControllerMockServiceTest {
     private IExchangeRatesService exchangeRatesService;
 
     @Test
+    void crash() {
+        assertTrue(false);
+    }
+
+    @Test
     void whenOnlyFromQueryParameter_thenStatusOkAndReturnAllRates() throws Exception {
         when(exchangeRatesService.getRates(Currency.USD, null))
             .thenReturn(new RatesResponse(1L, Currency.USD, Map.of(
