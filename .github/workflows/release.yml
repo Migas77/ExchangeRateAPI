@@ -38,7 +38,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_PAT }}
         run: |
-          npm exec --ignore-scripts -- semantic-release \
+          npm exec --ignore-scripts \
             --package conventional-changelog-conventionalcommits@8.0.0 \
             --package @semantic-release/exec@7.1.0 \
             --package @semantic-release/git@10.0.1 \
