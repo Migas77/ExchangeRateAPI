@@ -58,12 +58,10 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
-      - name: Replace branch name in branches array
+      - name: Create local branch from detached HEAD
         env:
           HEAD_REF: ${{ github.head_ref }}
-        run: |
-          sed -i 's/^\( *- \)main$/\1'"${HEAD_REF}"'/' .releaserc.yml
-          cat .releaserc.yml
+        run: git checkout -b "$HEAD_REF"
       - name: Check next Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
