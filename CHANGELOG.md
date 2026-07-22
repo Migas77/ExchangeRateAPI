@@ -1,3 +1,13 @@
+## [6.0.0](https://github.com/Migas77/ExchangeRateAPI/compare/v5.21.0...v6.0.0) (2026-07-22)
+
+### ⚠ BREAKING CHANGES
+
+* breaking change of cenas
+
+### Features
+
+* breaking change of cenas ([017d26c](https://github.com/Migas77/ExchangeRateAPI/commit/017d26c1eef86dbabe8cfc481c1ca5a43fd8c71f))
+
 ## [5.21.0](https://github.com/Migas77/ExchangeRateAPI/compare/v5.20.2...v5.21.0) (2026-07-22)
 
 ### Features
