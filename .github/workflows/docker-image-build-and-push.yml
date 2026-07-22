@@ -1,8 +1,9 @@
 name: Docker Image Build and Push
 
 on:
-  workflow_dispatch:
-  workflow_call:
+  push:
+    tags:
+      - '*'
   pull_request:
     branches:
       - main
