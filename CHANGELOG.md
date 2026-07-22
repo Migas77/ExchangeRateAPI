@@ -1,3 +1,10 @@
+## [6.3.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.2.0...v6.3.0) (2026-07-22)
+
+### Features
+
+* readd permissions ([22cad6a](https://github.com/Migas77/ExchangeRateAPI/commit/22cad6a59232bcd86fb32c4bf0406675ea816ed3))
+* remove permissions ([2605679](https://github.com/Migas77/ExchangeRateAPI/commit/2605679db5ea5071c41784e39caea779a6d56bba))
+
 ## [6.2.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.1.0...v6.2.0) (2026-07-22)
 
 ### Features
