@@ -61,5 +61,6 @@ jobs:
       - name: Check next Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_REF: ${{ github.head_ref }}
         run: |
           npm exec --ignore-scripts -- semantic-release --dry-run --no-ci --branches "$HEAD_REF"
