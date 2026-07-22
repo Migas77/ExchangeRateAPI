@@ -1,3 +1,9 @@
+## [6.1.0](https://github.com/Migas77/ExchangeRateAPI/compare/v6.0.0...v6.1.0) (2026-07-22)
+
+### Features
+
+* change docker iamnge ([b6841b0](https://github.com/Migas77/ExchangeRateAPI/commit/b6841b08ba94aad2209b7f0e72651bcf002c809b))
+
 ## [6.0.0](https://github.com/Migas77/ExchangeRateAPI/compare/v5.21.0...v6.0.0) (2026-07-22)
 
 ### ⚠ BREAKING CHANGES
